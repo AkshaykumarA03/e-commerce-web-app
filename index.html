@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFuel | Protein Supplements</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Pro<span>Fuel</span></div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login">Login</button>
+      <button class="signup">Sign Up</button>
+      <button class="cart-btn" onclick="openCart()">
+        Cart
+        <span class="cart-count" style="display: none;">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" style="display: none;">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Shopping Cart</h2>
+        <button class="close-btn" onclick="closeCart()">X</button>
+      </div>
+      <div class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span class="cart-total-amount">₹0</span>
+          </div>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        <button class="continue-shopping" onclick="closeCart()">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text-full">
+      <h1>Fuel Your Strength. Dominate Your Goals.</h1>
+      <p>Premium supplements trusted by elite athletes worldwide</p>
+      <button class="shop-btn" onclick="scrollToSection('products')">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters" id="products">
+    <input type="text" placeholder="Search supplements...">
+    <select>
+      <option value="">All Categories</option>
+      <option value="protein">Protein</option>
+      <option value="creatine">Creatine</option>
+      <option value="bcaa">BCAA</option>
+    </select>
+  </section>
+
+  <!-- Products by Category -->
+  <!-- Protein Category -->
+  <section class="category-section">
+    <h2 class="category-title">Protein Supplements</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="badge">Popular</div>
+        <div class="product-image-container">
+          <img src="https://cdn2.nutrabay.com/uploads/variant/images/featured_image-NB-NUT-1013-10-1500x1500.webp" alt="Whey Protein Isolate">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Whey Protein Isolate</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(245 reviews)</span>
+          </div>
+          <p class="description">Fast muscle recovery & lean gains with 25g protein per serving</p>
+          <div class="product-specs">
+            <span class="spec">Vanilla Flavor</span>
+            <span class="spec">1kg Packet</span>
+            <span class="spec">25g Protein</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹2999</span>
+            <span class="original-price">₹3999</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://cdn.nutrabay.com/wp-content/uploads/2021/08/NB-NAK-1010-01-01.jpg" alt="Plant Protein">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Plant Protein</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="review-count">(189 reviews)</span>
+          </div>
+          <p class="description">Vegan & easy digestion with complete amino acids</p>
+          <div class="product-specs">
+            <span class="spec">100% Vegan</span>
+            <span class="spec">500g Packet</span>
+            <span class="spec">22g Protein</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹1999</span>
+            <span class="original-price">₹2499</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://cdn2.nutrabay.com/uploads/variant/images/featured_image-NB-NUT-1012-02-1753297195-1500x1500.webp" alt="Mass Gainer">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Mass Gainer</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(312 reviews)</span>
+          </div>
+          <p class="description">High calories for bulking with optimized carb-protein ratio</p>
+          <div class="product-specs">
+            <span class="spec">Chocolate</span>
+            <span class="spec">2kg Packet</span>
+            <span class="spec">50g Protein</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹1499</span>
+            <span class="original-price">₹1999</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protein Bars Category -->
+  <section class="category-section">
+    <h2 class="category-title">Protein Bars</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.C2VdgxNe_rLqYAGvjb6h5wHaHa?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Chocolate Protein Bar">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Chocolate Protein Bar</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(567 reviews)</span>
+          </div>
+          <p class="description">High protein, low sugar with delicious chocolate taste</p>
+          <div class="product-specs">
+            <span class="spec">Chocolate</span>
+            <span class="spec">Pack of 6</span>
+            <span class="spec">20g Protein</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹599</span>
+            <span class="original-price">₹799</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-card">
+        <div class="badge">New</div>
+        <div class="product-image-container">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.C2VdgxNe_rLqYAGvjb6h5wHaHa?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Almond Protein Bar">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Almond Protein Bar</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="review-count">(89 reviews)</span>
+          </div>
+          <p class="description">Nutritious almond bar with 18g protein per bar</p>
+          <div class="product-specs">
+            <span class="spec">Almond</span>
+            <span class="spec">Pack of 6</span>
+            <span class="spec">18g Protein</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹649</span>
+            <span class="original-price">₹849</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creatine Category -->
+  <section class="category-section">
+    <h2 class="category-title">Creatine</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://cdn2.nutrabay.com/uploads/variant/images/featured_image-NB-NUT-1009-03-1753300664-1500x1500.webp" alt="Creatine Monohydrate">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Creatine Monohydrate</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(456 reviews)</span>
+          </div>
+          <p class="description">Strength & muscle gains with 5g pure creatine</p>
+          <div class="product-specs">
+            <span class="spec">Unflavored</span>
+            <span class="spec">250g</span>
+            <span class="spec">5g per serving</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹899</span>
+            <span class="original-price">₹1299</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BCAA Category -->
+  <section class="category-section">
+    <h2 class="category-title">BCAA</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://cdn2.nutrabay.com/uploads/variant/images/image_2-NB-OPT-1009-04-1765363219-1080x1080.webp" alt="BCAA with Glutamine">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>BCAA + Glutamine</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="review-count">(234 reviews)</span>
+          </div>
+          <p class="description">Advanced recovery blend with 5g BCAA ratio</p>
+          <div class="product-specs">
+            <span class="spec">Fruit Punch</span>
+            <span class="spec">500g</span>
+            <span class="spec">5g BCAA per serving</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹1799</span>
+            <span class="original-price">₹2299</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multivitamins Category -->
+  <section class="category-section">
+    <h2 class="category-title">Multivitamins</h2>
+    <div class="products">
+      <div class="product-card">
+        <div class="product-image-container">
+          <img src="https://cdn.nutrabay.com/wp-content/uploads/2023/03/NB-MUT-1042-02-01.jpg" alt="Complete Multivitamin">
+          <span class="stock in-stock">In Stock</span>
+        </div>
+        <div class="product-details">
+          <h3>Complete Multivitamin</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="review-count">(389 reviews)</span>
+          </div>
+          <p class="description">All essential nutrients for daily health & immunity</p>
+          <div class="product-specs">
+            <span class="spec">Tablets</span>
+            <span class="spec">60 tablets</span>
+            <span class="spec">30 nutrients</span>
+          </div>
+          <div class="product-info">
+            <span class="price">₹649</span>
+            <span class="original-price">₹899</span>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="about">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About ProFuel</h4>
+        <p>ProFuel is your trusted partner for premium fitness supplements. We deliver high-quality products trusted by athletes worldwide.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section" id="contact">
+        <h4>Contact Info</h4>
+        <p>Email: info@profuel.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>Address: Fitness Hub, Mumbai, India</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <p>
+          <a href="#">Facebook</a> | 
+          <a href="#">Instagram</a> | 
+          <a href="#">Twitter</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ProFuel Nutrition | Power Your Performance | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
